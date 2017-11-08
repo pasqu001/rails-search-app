@@ -5,3 +5,55 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Artist.destroy_all
+
+Artist.create(name: "Deadmau5")
+name = [
+  "Beyonce",
+  "Justin Bieber",
+  "Tiesto",
+  "Jay-Z",
+  "Ray Charles",
+  "Wu Tang Clan",
+  "Beartooth",
+  "Britney Spears",
+  "Gap Band",
+  "Sam Smith",
+  "Lindsey Sterling",
+  "Pantera",
+  "Michael Jackson",
+  "A Tribe Called Quest",
+  "Dragonforce",
+  "Steven Miller Band",
+  "Justin Timberlake",
+  "Alan Jackson"
+]
+
+name.each do |band|
+  Artist.create(name: band)
+end
+
+
+# for our seeds.rb
+
+['Universal',
+ 'Virgin',
+ 'Atlantic',
+ 'Geffen'
+].each do |name|
+  Label.find_or_create_by name: name
+end
+
+['The Best of The Doors',
+ 'Waiting for the Sun',
+ 'Dark Side of the Moon',
+ 'Hot Fuss',
+ 'Battle Born',
+ 'Who Are You',
+ 'Live At Leeds',
+ 'No More Rain',
+ 'The X Files'
+].each do |name|
+  Album.find_or_create_by( name: name )
+end
